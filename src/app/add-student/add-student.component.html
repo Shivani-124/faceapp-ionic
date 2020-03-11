@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-title>Add Student</ion-title>
+</ion-header>
+
+<ion-content>
+  <!-- The buttons to control the stream -->
+  <div class="button-group">
+    <button id="btn-start" type="button" class="button">Start Streaming</button>
+    <button id="btn-stop" type="button" class="button">Stop Streaming</button>
+    <button id="btn-capture" type="button" class="button" (click)='captureSnapshot()'>Capture Image</button>
+  </div>
+
+  <!-- Video Element & Canvas -->
+  <div class="play-area">
+    <div class="play-area-sub">
+      <h3>The Stream</h3>
+      <video id="stream" width="320" height="240"></video>
+    </div>
+    <div class="play-area-sub">
+      <h3>The Capture</h3>
+      <canvas id="capture" width="320" height="240"></canvas>
+      <div id="snapshot"></div>
+    </div>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" [(ngModel)]="student.name" /></td>
+      </tr>
+
+      <tr>
+        <td>Department:</td>
+        <td><input type="text" [(ngModel)]="student.details.department" /></td>
+      </tr>
+      <tr>
+        <td>Class:</td>
+        <td><input type="text" [(ngModel)]="student.details.classname" /></td>
+      </tr>
+      <tr>
+        <td>Contact:</td>
+        <td><input type="number" [(ngModel)]="student.details.contact" /></td>
+      </tr>
+      <tr>
+        <td>Parent Contact:</td>
+        <td><input type="number" [(ngModel)]="student.details.parentcontact" /></td>
+      </tr>
+    </table>
+
+  </div>
+
+  <button (click)='onAddStudent()'>Add Student</button>
+</ion-content>

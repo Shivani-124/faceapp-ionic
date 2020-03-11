@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+@Component({
+    
+    })
+export class image{
+    function startStreaming() {
+
+	var mediaSupport = 'mediaDevices' in navigator;
+
+	if( mediaSupport && null == cameraStream ) {
+
+		navigator.mediaDevices.getUserMedia( { video: true } )
+		.then( function( mediaStream ) {
+
+			cameraStream = mediaStream;
+
+			stream.srcObject = mediaStream;
+
+			stream.play();
+		})
+		.catch( function( err ) {
+
+			console.log( "Unable to access camera: " + err );
+		});
+	}
+}
